@@ -110,7 +110,7 @@ const showIssuesModal = async (id) => {
     // loadingToggleSpinner(true);
 
     modalContainer.innerHTML = `
-        <div class="p-36 flex justify-center items-center">
+        <div class="p-20 flex justify-center items-center">
             <span class="loading loading-dots loading-xl text-primary"></span>
         </div>
     `;
@@ -145,12 +145,12 @@ const showIssuesModal = async (id) => {
     const modalDiv = document.createElement('div');
     modalDiv.classList.add('bg-white', 'p-4', 'space-y-4');
     modalDiv.innerHTML = `
-                        <h2 class="text-lg font-bold">${showData.title}</h2>
+                        <h2 class="text-2xl font-bold">${showData.title}</h2>
                         <p class="font-semibold flex justify-center items-center gap-2"><span
                                 class="${bgColor} text-white rounded-full p-2">${showData.status.toUpperCase()}</span> • Opened by<span>${showData.author}</span> •
                             <span>${showData.createdAt.split('T')[0].split('-').reverse().join('-')}</span>
                         </p>
-                        <div class="flex gap-2">
+                        <div class="flex items-center gap-2">
                             <span class="badge badge-soft ${badgeColor}">${priority}</span>
                         </div>
                         <p>${showData.description}</p>
