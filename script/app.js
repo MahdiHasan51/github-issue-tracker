@@ -30,17 +30,15 @@ const toggleBtn = (activeBtn) => {
 
     filterAllBtn.forEach(btn => {
         btn.classList.remove("btn-primary");
-        // btn.classList.add("btn");
     })
     activeBtn.classList.add("btn-primary");
-    // activeBtn.classList.remove("btn");
 
 }
 
 
 const labelConfig = {
     bug: {
-        color: "badge badge-soft badge-error text-[0.7rem]",
+        color: "badge badge-soft badge-error",
         icon: "./assets/BugDroid.png"
     },
     "good first issue": {
@@ -48,11 +46,11 @@ const labelConfig = {
         icon: "./assets/target.png"
     },
     enhancement: {
-        color: "badge badge-soft badge-success text-[0.7rem]",
+        color: "badge badge-soft badge-success",
         icon: "./assets/starVector.png"
     },
     documentation: {
-        color: "badge badge-soft badge-info text-[0.7rem]",
+        color: "badge badge-soft badge-info",
         icon: "./assets/file.png"
     }
 };
