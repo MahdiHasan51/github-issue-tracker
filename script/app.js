@@ -146,8 +146,8 @@ const showIssuesModal = async (id) => {
     modalDiv.classList.add('bg-white', 'p-4', 'space-y-4');
     modalDiv.innerHTML = `
                         <h2 class="text-2xl font-bold">${showData.title}</h2>
-                        <p class="font-semibold flex justify-center items-center gap-2"><span
-                                class="${bgColor} text-white rounded-full p-2">${showData.status.toUpperCase()}</span> • Opened by<span>${showData.author}</span> •
+                        <p class="font-semibold flex justify-start items-start gap-2"><span
+                                class="${bgColor} text-white rounded-full px-3 py-1 text-xs font-medium">${showData.status.toUpperCase()}</span> • Opened by<span>${showData.author}</span> •
                             <span>${showData.createdAt.split('T')[0].split('-').reverse().join('-')}</span>
                         </p>
                         <div class="flex items-center gap-2">
