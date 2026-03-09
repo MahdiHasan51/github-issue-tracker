@@ -35,6 +35,30 @@ const toggleBtn = (activeBtn) => {
 
 }
 
+const searchIssues = () => {
+    const searchValue = searchInput.value.trim().toLowerCase();
+
+    if(searchValue === ""){
+        displayIssueCards(allIssues);
+        return;
+    }
+    const filteredIssues = allIssues.filter(issue => 
+        issue.title.toLowerCase().includes(searchValue)
+    );
+    if(filteredIssues.length > 0){
+        displayIssueCards(filteredIssues);
+    }
+    else{
+        issueCardsContainer.innerHTML = `<div class="bg-[#BADEFF26] text-center p-6 rounded-lg shadow-md space-y-4 col-span-full">
+                
+                <p>Sorry, we couldn't find any matching issues.</p>
+                <h3 class="text-2xl font-bold">Try searching with a different issue</h3>
+                </div>
+                `;
+    }
+}
+
+
 
 const labelConfig = {
     bug: {
@@ -262,6 +286,8 @@ searchBtn.addEventListener('click', () => {
             loadingToggleSpinner(false);
         })
 })
+
+searchInput.addEventListener("input", searchIssues);
 
 allTabBtn.addEventListener("click", () => {
     toggleBtn(allTabBtn);
